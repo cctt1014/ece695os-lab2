@@ -1,0 +1,7 @@
+cd apps/example
+make clean
+cd -
+cd os
+make clean
+cd -
+
