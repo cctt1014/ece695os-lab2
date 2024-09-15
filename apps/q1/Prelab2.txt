@@ -1,0 +1,9 @@
+32 semaphores and 64 locks are available in DLXOS
+
+System calls are: LockCreate(), LockHandleAcquire() and LockHandleRelease()
+
+In dointerrupt, SemCreate is used to create a semaphore. All 
+semaphores are defined in a semaphore array, and SemCreate
+function loops through the array to find unused semaphore. If
+a semaphore is available, its waiting queue will be 
+instantiated by SemInit function.
