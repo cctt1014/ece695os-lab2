@@ -71,6 +71,8 @@ if [ -z "$REMOTE_COMMAND" ]; then
 	exit 1
 fi
 
+REMOTE_COMMAND="source ~/.profile ; ${REMOTE_COMMAND} |& tee sim.log" 
+
 function formatTime {
 	local time=$1
 
