@@ -1,93 +1,146 @@
-cd ../lab2/bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 3; ee469_fixterminal
-dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
-dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
-Stack=0x1fffc8, pc starting at 0x112fc
-Got 3 arguments.
-Available memory: 0x1c860 -> 0x200000.
-Argument count is 3.
-Argument 0 is -u.
-Argument 1 is makeprocs.dlx.obj.
-Argument 2 is 3.
-calling process_create with two parameters
-Creating 3 pairs of producer and consumer
-Producer 30 inserted: 0
-Producer 0 created
-Producer 30 inserted: 1
-Consumer 0 created
-Producer 30 inserted: 2
-Producer 1 created
-Consumer 29 removed: 0
-Consumer 1 created
-Producer 30 inserted: 3
-Producer 2 created
-Producer 28 inserted: 0
-Consumer 2 created
-Consumer 27 removed: 1
-Consumer 29 removed: 2
-Producer 26 inserted: 0
-Producer 30 inserted: 4
-Consumer 25 removed: 3
-Producer 28 inserted: 1
-Consumer 27 removed: 0
-Consumer 29 removed: 0
-Producer 26 inserted: 1
-Producer 30 inserted: 5
-Consumer 25 removed: 4
-Producer 28 inserted: 2
-Consumer 27 removed: 1
-Consumer 29 removed: 1
-Producer 26 inserted: 2
-Producer 30 inserted: 6
-Consumer 25 removed: 5
-Producer 28 inserted: 3
-Consumer 27 removed: 2
-Consumer 29 removed: 2
-Producer 26 inserted: 3
-Producer 30 inserted: 7
-Consumer 25 removed: 6
-Producer 28 inserted: 4
-Consumer 27 removed: 3
-Consumer 29 removed: 3
-Producer 26 inserted: 4
-Producer 30 inserted: 8
-Consumer 25 removed: 7
-Producer 28 inserted: 5
-Consumer 27 removed: 4
-Consumer 29 removed: 4
-Producer 26 inserted: 5
-Producer 30 inserted: 9
-Consumer 25 removed: 8
-Producer 30 is complete.
-Producer 28 inserted: 6
-Consumer 27 removed: 5
-Consumer 29 removed: 5
-Producer 26 inserted: 6
-Consumer 25 removed: 9
-Producer 28 inserted: 7
-Consumer 27 removed: 6
-Consumer 29 removed: 6
-Producer 26 inserted: 7
-Consumer 25 removed: 7
-Producer 28 inserted: 8
-Consumer 27 removed: 7
-Consumer 29 removed: 8
-Producer 26 inserted: 8
-Consumer 29 is complete.
-Consumer 25 removed: 8
-Producer 28 inserted: 9
-Consumer 27 removed: 9
-Producer 28 is complete.
-Consumer 27 is complete.
-Producer 26 inserted: 9
-Consumer 25 removed: 9
-Producer 26 is complete.
-Consumer 25 is complete.
-All other processes completed, exiting main process.
-No runnable processes - exiting!
-Exiting at program request.
-Instructions executed: 23051725
-Time simulated: 23.052 secs
-Real time elapsed: 0.590 secs
-Execution rate: 39.08M simulated instructions per real second.
-stty: standard input: Inappropriate ioctl for device
-make: *** [run] Error 1
+cd os; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/os'
+rm -rf work ../bin/os.dlx.obj ../lib/usertraps.aso ../lib/misc.o Makefile.depend ../bin/vm
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/os'
+cd apps/example; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/example'
+cd makeprocs; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/example/makeprocs'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM makeprocs.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/example/makeprocs'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/example/makeprocs'
+rm -rf work ../../../bin/makeprocs.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/example/makeprocs'
+cd spawn_me; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/example/spawn_me'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM spawn_me.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/example/spawn_me'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/example/spawn_me'
+rm -rf work ../../../bin/spawn_me.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/example/spawn_me'
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/example'
+cd apps/q2; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2'
+cd makeprocs; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/makeprocs'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM makeprocs.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/makeprocs'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/makeprocs'
+rm -rf work ../../../bin/makeprocs.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/makeprocs'
+cd producer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/producer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM producer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/producer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/producer'
+rm -rf work ../../../bin/producer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/producer'
+cd consumer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/consumer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM consumer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/consumer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q2/consumer'
+rm -rf work ../../../bin/consumer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2/consumer'
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q2'
+cd apps/q3; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3'
+cd makeprocs; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/makeprocs'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM makeprocs.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/makeprocs'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/makeprocs'
+rm -rf work ../../../bin/makeprocs.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/makeprocs'
+cd producer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/producer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM producer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/producer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/producer'
+rm -rf work ../../../bin/producer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/producer'
+cd consumer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/consumer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM consumer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/consumer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q3/consumer'
+rm -rf work ../../../bin/consumer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3/consumer'
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q3'
+cd apps/q4; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4'
+cd makeprocs; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/makeprocs'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM makeprocs.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/makeprocs'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/makeprocs'
+rm -rf work ../../../bin/makeprocs.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/makeprocs'
+cd producer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/producer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM producer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/producer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/producer'
+rm -rf work ../../../bin/producer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/producer'
+cd consumer; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/consumer'
+../../Makerules:110: Makefile.depend: No such file or directory
+gcc-dlx -I../include -I../../../include -MM consumer.c  | sed "s/^\(.*\):/work\/\1:/" > Makefile.depend
+sleep 0.1
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/consumer'
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q4/consumer'
+rm -rf work ../../../bin/consumer.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4/consumer'
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q4'
+cd apps/q5; make clean
+make[1]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5'
+cd makeprocs; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/makeprocs'
+rm -rf work ../../../bin/makeprocs.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/makeprocs'
+cd producer_n; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/producer_n'
+rm -rf work ../../../bin/producer_n.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/producer_n'
+cd producer_o; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/producer_o'
+rm -rf work ../../../bin/producer_o.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/producer_o'
+cd reaction_1; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_1'
+rm -rf work ../../../bin/reaction_1.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_1'
+cd reaction_2; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_2'
+rm -rf work ../../../bin/reaction_2.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_2'
+cd reaction_3; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_3'
+rm -rf work ../../../bin/reaction_3.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_3'
+cd reaction_4; make clean
+make[2]: Entering directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_4'
+rm -rf work ../../../bin/reaction_4.dlx.obj Makefile.depend ../../../bin/vm
+make[2]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5/reaction_4'
+make[1]: Leaving directory `/tmp/chen5242/mainframer/lab2/apps/q5'

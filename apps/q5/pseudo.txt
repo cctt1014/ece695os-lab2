@@ -1,0 +1,77 @@
+shared buffer
+# N
+# O
+# N2
+# O2
+# NO2
+# O3
+tflagN
+tflagO
+
+
+how to terminate the 4 child processes producing chemicals
+formula 1 & 2 <# corresponding atoms>
+
+while () { // formula 1
+    lock_acq
+
+    if (curr_N2_cnt == input_N/2) {
+        tflagN = 1;
+        lock_rel
+        return;
+    } else if (!(buffer->num_n >= 2)) {
+        wait(cond_N2)
+    }
+
+    produce N2
+
+    if ((buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) {
+        signal(cond_NO2)
+    }
+    // if ((buffer->num_o2 >= 3) && !(buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) {
+    //     signal(cond_O3)
+    // }
+}
+
+
+formula 3 & 4
+
+
+if (temp > 120) return ;
+while () // formula 3
+{
+    lock_aquire(lock_of_shared_buffer)
+
+    if ((!(buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) && tflagN && tflagO) {
+        if (buffer->num_o2 >= 3) {
+            signal(cond_O3)
+        }
+        lock_release(lock_of_shared_buffer)
+        return;
+    } else if (!(buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) {
+        wait(cond_NO2)
+    }
+    
+    remove 2O2 and 1N2
+    lock_release(lock_of_shared_buffer)
+}
+
+
+if (temp < 60) return ;
+while () // formula 4
+{
+    lock_aquire(lock_of_shared_buffer)
+
+    if ((!(buffer->num_o2 >=3)) && tflagO) {
+        lock_release(lock_of_shared_buffer)
+        return;
+    } else if (!(buffer->num_o2 >= 3) || (buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) {
+        if ((buffer->num_o2 >= 2 && buffer->num_n2 >= 1)) {
+            signal(cond_NO2)
+        }
+        wait(cond_O3)
+    }
+    
+    remove 2O3
+    lock_release(lock_of_shared_buffer)
+}
