@@ -42,15 +42,15 @@ void main (int argc, char *argv[])
 
     lock_acquire(stat_lock);
 
-    while (stat->num_o2 > 2) {
+    while (stat->num_o2 < 3) {
       cond_wait(c_O3_ready);
     }
 
     stat->num_o2 -= 3;
     stat->num_o3 += 2;
+    Printf("[Reaction 4] 3O2 -> 2O3\n");
 
     lock_release(stat_lock);
-    Printf("[Reaction 4] 3O2 -> 2O3\n");
   }
 
   // Signal the semaphore to tell the original process that we're done

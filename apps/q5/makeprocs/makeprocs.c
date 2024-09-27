@@ -45,7 +45,7 @@ void main (int argc, char *argv[])
   num_n_i = dstrtol(argv[1], NULL, 10); // the "10" means base 10
   num_o_i = dstrtol(argv[2], NULL, 10); // the "10" means base 10
   temperature_i = dstrtol(argv[3], NULL, 10); // the "10" means base 10
-  Printf("Creating simulation with %d N atoms and %d O atoms at %d degree temperature\n", num_n_i, num_o_i, temperature_i);  
+  Printf("[MAKEPROCS] Simulate with %d N atoms and %d O atoms at %d degree\n", num_n_i, num_o_i, temperature_i);  
 
   // Allocate space for a shared memory page, which is exactly 64KB
   // Note that it doesn't matter how much memory we actually need: we 
@@ -151,7 +151,7 @@ void main (int argc, char *argv[])
     Printf("Bad semaphore s_procs_completed (%d) in ", s_procs_completed); Printf(argv[0]); Printf("\n");
     Exit();
   }
-  Printf("All other processes completed, exiting main process.\n");
+  Printf("[MAKEPROCS] All other processes completed, exiting main process.\n");
 
   Exit();
 

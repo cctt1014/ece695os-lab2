@@ -1,3 +1,10 @@
+# Input arguments for q2/q3/q4
+NUM_PC_PAIR=3
+# Input arguments for q5
+NUM_N=10
+NUM_O=10
+TEMPERATURE=120
+
 .PHONY: default q2 q3 q4 q5 run
 
 default: build_os
@@ -27,7 +34,7 @@ clean:
 	cd apps/q5; make clean
 
 run:
-	cd ../lab2/bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 3; ee469_fixterminal
+	cd ../lab2/bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj $(NUM_PC_PAIR); ee469_fixterminal
 
 run_q5:
-	cd ../lab2/bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 10 10 100; ee469_fixterminal
+	cd ../lab2/bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj $(NUM_N) $(NUM_O) $(TEMPERATURE); ee469_fixterminal

@@ -407,15 +407,15 @@ int CondWait (Cond *cond) {
   LockHandleRelease(cond->lock);
   
 
-  printf("[DBG] CondWait: Current Process %d before sleep.\n", GetCurrentPid());
+  // printf("[DBG] CondWait: Current Process %d before sleep.\n", GetCurrentPid());
   ProcessSleep();
-  printf("[DBG] CondWait: Current Process %d after sleep.\n", GetCurrentPid());
+  // printf("[DBG] CondWait: Current Process %d after sleep.\n", GetCurrentPid());
   
   RestoreIntrs (intrval);
-  printf("[DBG] CondWait: Current Process %d restore the interrupt.\n", GetCurrentPid());
+  // printf("[DBG] CondWait: Current Process %d restore the interrupt.\n", GetCurrentPid());
 
   LockHandleAcquire(cond->lock);
-  printf("[DBG] CondWait: Current Process %d get the lock.\n", GetCurrentPid());
+  // printf("[DBG] CondWait: Current Process %d get the lock.\n", GetCurrentPid());
   
   return SYNC_SUCCESS;
 }

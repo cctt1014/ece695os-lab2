@@ -17,13 +17,25 @@ make <target>
 * q5
 
 ## To run the test program:
-If run with q5 built
+### Run with q5 built
+
+Run with default input values:
 ```shell
 make run_q5
 ```
-run any target else
+Input arguments NUM_N, NUM_O and TEMPERATURE are available for run_q5. To change these inputs:
+```shell
+make run_q5 NUM_N=16 NUM_O=32 TEMPERATURE=100
+```
+
+### Run with any other targets
+Run with default input values:
 ```shell
 make run
+```
+Input arguments NUM_PC_PAIR is available for q2/q3/q4. To change the input:
+```shell
+make run NUM_PC_PAIR=5
 ```
 
 

@@ -50,10 +50,11 @@ void main (int argc, char *argv[])
     stat->num_n  -= 2;
     stat->num_n2 += 1;
 
+    Printf("[Reaction 1] N + N -> N2\n");
+
     if (stat->num_n2 > 0 && stat->num_o2 > 1) cond_signal(c_NO2_ready);
 
     lock_release(stat_lock);
-    Printf("[Reaction 1] N + N -> N2\n");
   }
 
   // Signal the semaphore to tell the original process that we're done
