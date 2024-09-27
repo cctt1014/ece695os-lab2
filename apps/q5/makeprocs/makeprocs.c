@@ -76,7 +76,7 @@ void main (int argc, char *argv[])
   // should be equal to the number of processes we're spawning - 1.  Once 
   // each of the processes has signaled, the semaphore should be back to
   // zero and the final sem_wait below will return.
-  if ((s_procs_completed = sem_create(-(6))) == SYNC_FAIL) {
+  if ((s_procs_completed = sem_create(-(6-1))) == SYNC_FAIL) {
     Printf("Bad sem_create in "); Printf(argv[0]); Printf("\n");
     Exit();
   }
@@ -131,6 +131,8 @@ void main (int argc, char *argv[])
   ditoa(c_O3_ready, c_O3_ready_str);
   ditoa(num_n_i, num_n_i_str);
   ditoa(num_o_i, num_o_i_str);
+  ditoa(est_num_no2, est_num_no2_str);
+  ditoa(est_num_o3, est_num_o3_str);
   ditoa(temperature_i, temperature_i_str);
 
 

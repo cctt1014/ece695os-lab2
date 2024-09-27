@@ -26,7 +26,8 @@ void main (int argc, char *argv[])
   s_procs_completed = dstrtol(argv[2], NULL, 10);
   stat_lock = dstrtol(argv[3], NULL, 10);
   c_O2_ready = dstrtol(argv[4], NULL, 10);
-  total_num_o = dstrtol(argv[4], NULL, 10);
+  total_num_o = dstrtol(argv[5], NULL, 10);
+  // Printf("[Producer O] Total number of O atoms is %d");
 
 
   if ((stat = (atmosphere_stat *)shmat(h_mem)) == NULL) {

@@ -18,7 +18,7 @@ void main (int argc, char *argv[])
 
 
   if (argc != 7) { 
-    Printf("Usage: "); Printf(argv[0]); Printf(" <handle_to_shared_memory_page> <handle_to_page_mapped_semaphore> <handle_to_stat_lock> <handle_to_O3_ready_semaphore> <handle_to_estimated_number_of_O3>\n"); 
+    Printf("Usage: "); Printf(argv[0]); Printf(" %d arguments received, 6 input arguments expected\n", argc-1); 
     Exit();
   }     
 
