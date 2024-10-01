@@ -1,4 +1,5 @@
 ## command
+make clean
 cd ./apps/q5
 make run
 
