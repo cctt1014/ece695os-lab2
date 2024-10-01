@@ -1,9 +1,46 @@
-32 semaphores and 64 locks are available in DLXOS
+Q: How many semaphores and locks are available in DLXOS, respectively?
+A: 32 semaphores and 64 locks are available in DLXOS
 
-System calls are: LockCreate(), LockHandleAcquire() and LockHandleRelease()
 
-In dointerrupt, SemCreate is used to create a semaphore. All 
+Q: What are the system calls to create, acquire and release a lock?
+A: System calls are: LockCreate(), LockHandleAcquire() and LockHandleRelease()
+
+
+Q: How is a semaphore created in DLXOS?
+A: In dointerrupt, SemCreate is used to create a semaphore. All 
 semaphores are defined in a semaphore array, and SemCreate
 function loops through the array to find unused semaphore. If
 a semaphore is available, its waiting queue will be 
 instantiated by SemInit function.
+
+
+Q: Explain how lock_acquire, lock_release, sem_signal and sem_wait work.
+A: 
+    lock_acquire is implemented to acquire a specified lock in a process by 
+assigning current process's PID to the pid variable attached to the specified 
+lock. By checking the pid attached to the lock, the function can figure out 
+whether this lock is available/owned by the current process/owned by other 
+process. When the lock is acquired by another process, the current proecss's 
+link in PCB will be recorded in waiting queue then the process will be put to sleep.
+    lock_release is implemented to release the specified lock occupied by the 
+caller process. If succeed, -1 will be written to the lock->pid, which means 
+this lock becomes available. lock waiting queue will be checked. If there is any
+process waiting for this lock, the first process in the queue will be woken up 
+and acquires the lock.
+    sem_signal is implemented to increase the specified semaphore counter. If
+there is any process waiting for the semaphore, the first one will be woken up
+and the counter value will be decreased.
+    sem_wait is implemented to decrease the semaphore counter value when the value
+is positive. Otherwise, the caller process will be put to sleep and its pcb link
+will be added to the waiting queue.
+    All 4 functions here utilize link in process's PCB structure to record the 
+process in the waiting queue, and wake it up when necessary. Interrupts are disabled
+in the main parts of these 4 functions to ensure atomicity.
+
+
+Q: What is a handle and how is it used to access semaphores in DLXOS?
+A: 
+    handle is a special integer index for locks, semaphores and conditional variables.
+For accessing semaphore, semaphore handle is passed between user program and certain 
+system calls. As all semaphores are defined in an array in OS, semaphore handle is used
+by user program to locate the specific semaphore entry in the array.
