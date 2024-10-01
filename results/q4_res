@@ -3,7 +3,7 @@ cd ./apps/q4
 make run
 
 
-## results
+## results (NUM=3)
 cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 3; ee469_fixterminal
 dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
 dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
@@ -104,3 +104,51 @@ Instructions executed: 22191078
 Time simulated: 22.191 secs
 Real time elapsed: 0.569 secs
 Execution rate: 38.97M simulated instructions per real second.
+
+
+## results (NUM=1)
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 1; ee469_fixterminal
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+Stack=0x1fffc8, pc starting at 0x1123c
+Got 3 arguments.
+Available memory: 0x1c788 -> 0x200000.
+Argument count is 3.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 1.
+calling process_create with two parameters
+Creating 1 pairs of producer and consumer
+Producer 30 inserted: 0
+Producer 0 created
+Producer 30 inserted: 1
+Consumer 29 removed: 0
+Consumer 0 created
+Producer 30 inserted: 2
+Consumer 29 removed: 1
+Consumer 29 removed: 2
+Producer 30 inserted: 3
+Consumer 29 removed: 3
+Consumer 29 waits for items
+Producer 30 inserted: 4
+Producer 30 inserted: 5
+Consumer 29 removed: 4
+Producer 30 inserted: 6
+Consumer 29 removed: 5
+Consumer 29 removed: 6
+Producer 30 inserted: 7
+Consumer 29 removed: 7
+Consumer 29 waits for items
+Producer 30 inserted: 8
+Producer 30 inserted: 9
+Consumer 29 removed: 8
+Producer 30 is complete.
+Consumer 29 removed: 9
+Consumer 29 is complete.
+All other processes completed, exiting main process.
+No runnable processes - exiting!
+Exiting at program request.
+Instructions executed: 9626488
+Time simulated: 9.626 secs
+Real time elapsed: 0.251 secs
+Execution rate: 38.31M simulated instructions per real second.
