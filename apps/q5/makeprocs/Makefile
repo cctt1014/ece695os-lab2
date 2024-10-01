@@ -6,8 +6,8 @@
 # this way because the build procedure for all apps is basically the same.
 
 
-SRCS=makeprocs.c
-EXEC=makeprocs.dlx.obj
+SRCS=krypton.c
+EXEC=krypton.dlx.obj
 
 include ../Makerules
 
