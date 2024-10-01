@@ -1,0 +1,186 @@
+## command
+cd ./apps/q5
+make run
+
+
+## results (NUM_N=10, NUM_O=10, TEMPERATURE=100)
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 10 10 100; ee469_fixterminal
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+Stack=0x1fffb8, pc starting at 0x1123c
+Got 5 arguments.
+Available memory: 0x1c788 -> 0x200000.
+Argument count is 5.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 10.
+Argument 3 is 10.
+Argument 4 is 100.
+[MAKEPROCS] Simulate with 10 N atoms and 10 O atoms at 100 degree
+[Producer N] 1 N and 0 O
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Producer N] 3 N and 1 O
+[Producer O] 3 N and 2 O
+[Reaction 1] N + N -> N2
+[Producer N] 2 N and 2 O
+[Producer O] 2 N and 3 O
+[Reaction 1] N + N -> N2
+[Reaction 2] O + O -> O2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Reaction 3] N2 + 2O2 -> 2NO2
+[Reaction 3] Process with PID 26 is complete.
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] Process with PID 30 is complete.
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Reaction 1] Process with PID 28 is complete.
+[Producer O] 0 N and 2 O
+[Producer O] Process with PID 29 is complete.
+[Reaction 2] O + O -> O2
+[Reaction 2] Process with PID 27 is complete.
+[Reaction 4] 3O2 -> 2O3
+[Reaction 4] Process with PID 25 is complete.
+[MAKEPROCS] All other processes completed, exiting main process.
+No runnable processes - exiting!
+Exiting at program request.
+Instructions executed: 22838917
+Time simulated: 22.839 secs
+Real time elapsed: 0.597 secs
+Execution rate: 38.27M simulated instructions per real second.
+
+
+
+## results (NUM_N=10, NUM_O=10, TEMPERATURE=50)
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 10 10 50; ee469_fixterminal
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+Stack=0x1fffb8, pc starting at 0x1123c
+Got 5 arguments.
+Available memory: 0x1c788 -> 0x200000.
+Argument count is 5.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 10.
+Argument 3 is 10.
+Argument 4 is 50.
+[MAKEPROCS] Simulate with 10 N atoms and 10 O atoms at 50 degree
+[Producer N] 1 N and 0 O
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Producer N] 3 N and 1 O
+[Producer O] 3 N and 2 O
+[Reaction 1] N + N -> N2
+[Producer N] 2 N and 2 O
+[Producer O] 2 N and 3 O
+[Reaction 4] Process with PID 25 is complete.
+[Reaction 1] N + N -> N2
+[Reaction 2] O + O -> O2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Reaction 3] N2 + 2O2 -> 2NO2
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] Process with PID 30 is complete.
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Reaction 3] N2 + 2O2 -> 2NO2
+[Reaction 1] Process with PID 28 is complete.
+[Reaction 3] Process with PID 26 is complete.
+[Producer O] 0 N and 2 O
+[Reaction 2] O + O -> O2
+[Reaction 2] Process with PID 27 is complete.
+[Producer O] Process with PID 29 is complete.
+[MAKEPROCS] All other processes completed, exiting main process.
+No runnable processes - exiting!
+Exiting at program request.
+Instructions executed: 22840303
+Time simulated: 22.840 secs
+Real time elapsed: 0.584 secs
+Execution rate: 39.09M simulated instructions per real second.
+
+
+## results (NUM_N=10, NUM_O=10, TEMPERATURE=130)
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 10 10 130; ee469_fixterminal
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+dlxsim: /home/min/a/ece695x/labs/common/gcc/lib/libstdc++.so.5: no version information available (required by dlxsim)
+Stack=0x1fffb8, pc starting at 0x1123c
+Got 5 arguments.
+Available memory: 0x1c788 -> 0x200000.
+Argument count is 5.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 10.
+Argument 3 is 10.
+Argument 4 is 130.
+[MAKEPROCS] Simulate with 10 N atoms and 10 O atoms at 130 degree
+[Producer N] 1 N and 0 O
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Producer N] 3 N and 1 O
+[Producer O] 3 N and 2 O
+[Reaction 1] N + N -> N2
+[Producer N] 2 N and 2 O
+[Reaction 3] Process with PID 26 is complete.
+[Producer O] 2 N and 3 O
+[Reaction 1] N + N -> N2
+[Reaction 2] O + O -> O2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] 2 N and 0 O
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Producer N] 1 N and 1 O
+[Reaction 4] 3O2 -> 2O3
+[Reaction 4] Process with PID 25 is complete.
+[Producer O] 1 N and 2 O
+[Producer N] 2 N and 2 O
+[Reaction 2] O + O -> O2
+[Producer N] Process with PID 30 is complete.
+[Producer O] 2 N and 1 O
+[Reaction 1] N + N -> N2
+[Reaction 1] Process with PID 28 is complete.
+[Producer O] 0 N and 2 O
+[Producer O] Process with PID 29 is complete.
+[Reaction 2] O + O -> O2
+[Reaction 2] Process with PID 27 is complete.
+[MAKEPROCS] All other processes completed, exiting main process.
+No runnable processes - exiting!
+Exiting at program request.
+Instructions executed: 22823059
+Time simulated: 22.823 secs
+Real time elapsed: 0.589 secs
+Execution rate: 38.73M simulated instructions per real second.
